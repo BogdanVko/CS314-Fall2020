@@ -1,0 +1,41 @@
+{
+    "$id": "https://example.com/address.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "distances",
+    "description": "distance request/response",
+    "type": "object",
+    "properties": {
+      "requestType": {
+        "description":"the TIP object type should be distance",
+        "type":"string",
+        "pattern":"^distances$"
+      },
+      "places": {
+        "description": "a list of places",
+        "type":"array",
+        "items": {
+          "type":"object",
+          "properties": {
+            "latitude": {
+              "type":"string",
+              "pattern":"^[-+]?(?:90(?:(?:\\.0+)?)|(?:[0-9]|[1-8][0-9])(?:(?:\\.[0-9]+)?))$"
+            },
+            "longitude": {
+              "type":"string",
+              "pattern":"^[-+]?(?:180(?:(?:\\.0+)?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]+)?))$"
+            }
+          },
+          "required": ["latitude","longitude"],
+          "additionalProperties": true
+        },
+        "minitems": 0
+      },
+      "earthRadius":{
+        "description":"the radius of the earth in some unit of measure",
+        "type":"number",
+        "minimum":1
+      }
+    },
+    "required":["requestType","places","earthRadius"],
+    "additionalProperties": false
+  }

@@ -1,0 +1,44 @@
+{
+  "$id": "https://example.com/address.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "config",
+  "description": "config response",
+  "type": "object",
+  "properties": {
+    "requestType": {
+      "description":"the TIP object type should be config",
+      "type":"string",
+      "pattern":"^config$"
+    },
+    "serverName": {
+      "description":"identify the server instance",
+      "type":"string",
+      "pattern":"^t[0-9][0-9].*$"
+    },
+    "features" : {
+      "description": "the APIs and optional properties supported by this server",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["config", "find", "distances", "tour", "type", "where"]
+      }
+    },
+    "type": {
+      "description": "types of places to choose",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["airport","balloonport","heliport","other"]
+      }
+    },
+    "where": {
+      "description": "a list of items from the config where filters.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required":["requestType", "serverName", "features"],
+  "additionalProperties": false
+}

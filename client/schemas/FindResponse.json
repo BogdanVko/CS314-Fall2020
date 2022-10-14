@@ -1,0 +1,65 @@
+{
+  "$id": "https://example.com/address.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "find",
+  "description": "find request/response",
+  "type": "object",
+  "properties": {
+    "requestType": {
+      "description":"the TIP object type should be locations",
+      "type":"string",
+      "pattern":"^find$"
+    },
+    "match": {
+      "description":"an alphanumeric pattern used to find geographic locations.",
+      "type":"string"
+    },
+    "type": {
+      "description": "types of places to choose",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["airport","balloonport","heliport","other"]
+      }
+    },
+    "where": {
+      "description": "a list of items from the config where filters.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limit": {
+      "description":"the maximum number of matching places that may be returned.",
+      "type":"integer",
+      "minimum":0
+    },
+    "found": {
+      "description":"the total number of matching places in the data source(s).",
+      "type":"integer",
+      "minimum":0
+    },
+    "places": {
+      "description": "a list of places",
+      "type":"array",
+      "items": {
+        "type":"object",
+        "properties": {
+          "latitude": {
+            "type":"string",
+            "pattern":"^[-+]?(?:90(?:(?:\\.0+)?)|(?:[0-9]|[1-8][0-9])(?:(?:\\.[0-9]+)?))$"
+          },
+          "longitude": {
+            "type":"string",
+            "pattern":"^[-+]?(?:180(?:(?:\\.0+)?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]+)?))$"
+          }
+        },
+        "required": ["latitude","longitude"],
+        "additionalProperties": true
+      },
+      "minitems": 0
+    }
+  },
+  "required":["requestType", "match", "limit", "found", "places"],
+  "additionalProperties": false
+}

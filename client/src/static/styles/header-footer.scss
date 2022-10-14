@@ -1,0 +1,48 @@
+// Background of Header / Footer
+
+.full-width {
+    width: 100%;
+
+    background-color: $primary;
+    color: #FFFFFF;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Header Styles
+
+.header {
+    height: 15vh;
+    margin-bottom: 25px;
+}
+
+.tco-logo {
+    width: 90px;
+    height: auto;
+    margin-right: 25px;
+}
+
+// Footer Styles
+
+.footer {
+    height: 10vh;
+    margin-top: 25px;
+}
+
+.centered {
+    margin: 0 auto;
+    text-align: center;
+}
+
+// Screen Width Intervals (Aligned with Bootstrap)
+
+@media only screen and (min-width: 576px) {
+
+    // Footer Centering at Small Screen Sizes
+
+    .centered {
+        margin: 0;
+        text-align: unset;
+    }
+}
