@@ -5,7 +5,7 @@ Just somes Zuccs
 LastName | FirstName | CSU eName | Github Username | CSU Email
 ------------- | ------------- | ------------- | ------------- | -------------
 Larson | Tor | torlarso | torlarso | torlarso@colostate.edu
-Vasilchenko | Bogdan | vba | doom01net | vba@colostate.edu
+Vasilchenko | Bogdan | vba | BogdanVko | vba@colostate.edu
 Lawrence | Aaron | catninja | catninja11 | catninja@colostate.edu
 Peng | Anfeng | tonypeng | vaccoon | tonypeng@colostate.edu
 Siler | Benjamin | bsiler | bsiler | bsiler@colostate.edu
